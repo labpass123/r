@@ -1,0 +1,25 @@
+alpha=5/100
+alpha
+f0=c(12, 8, 20, 2, 14, 10, 15, 6, 9, 4) 
+f0
+n=10
+n
+fe=rep(1/length(f0),length(f0))
+fe
+test_result=chisq.test(x=f0,p=fe)
+test_result
+df=n-1
+df
+chisquare_cal=round(test_result$statistic,2)
+chisquare_cal
+chisquare_tab=round(qchisq(p=alpha/2, df=df, lower.tail=F),4)
+chisquare_tab
+p_value=round(test_result$p.value,4)
+p_value
+if(chisquare_cal<chisquare_tab) {print("Accept the null hypothesis H0")}else{print("Reject 
+the null hypothesis H0")}
+if(p_value<alpha) {cat("Reject the null hypothesis H0")}else{cat("Do not reject the null 
+hypothesis H0")}
+cat("Chi-square statistic value is:", chisquare_cal, "\n")
+cat("Chi-square critical value is:", chisquare_tab, "\n")
+cat("P-value is:", p_value, "\n")
