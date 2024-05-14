@@ -1,0 +1,38 @@
+#Given data, let x=age of husband, y=age of wife
+x=c(25,28,30,32,35,36,38,39,42,45)
+x
+y=c(20,26,29,30,25,18,26,35,35,46)
+y
+#mean of x and y
+xbar=mean(x)
+xbar
+ybar=mean(y)
+ybar
+#variance of x and y
+Var_x=var(x)
+Var_x
+Var_y=var(y)
+Var_y
+#covariance of x and y
+Cov_xy=cov(x,y)
+Cov_xy
+#correlation of x and y by Karl Pearson
+Corr_xy=cor(x,y, use="everything", method="pearson")
+Corr_xy
+#scatter plot of x and y
+plot(x,y,type="p",main="scatter plot of x and y",col="blue",xlab="age of husbands",ylab="age of wifes")
+#regression coefficients of x on y
+bxy=lm(x~y)
+bxy
+#regression coefficients of y on x
+byx=lm(y~x)
+byx
+#determine the most likely age of husbands for age of wife 25 years
+wife_age_25=data.frame(y=25)
+wife_age_25
+husband_age=round(predict(bxy,wife_age_25))
+husband_age
+#determine the most likely age of wife for age of husbands 30 years
+husband_age_30=data.frame(x=30)
+wife_age=round(predict(byx,husband_age_30))
+wife_age
