@@ -1,0 +1,17 @@
+x=c(4,29,19,14,30,19,49,27,30,41,52,49,21,23,27,34,36,46,4,38,31,45)
+x
+y=c(37,35,16,26,23,27,49,27,39,54,56,47,27,20,31,36,39,42,48,37,36,49)
+y
+xbar=mean(x)
+xbar
+ybar=mean(y)
+ybar
+Var_x=var(x)
+Var_x
+Var_y=var(y)
+Var_y
+Cov_xy=cov(x,y)
+Cov_xy
+Corr_xy=cor(x,y, use="everything", method="pearson")
+Corr_xy
+plot(x,y,type="p",pch=16,main="scatter plot of x and y",col="blue",xlab="method1 marks",ylab="method2 marks")
