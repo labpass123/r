@@ -1,0 +1,21 @@
+x=c(4,9,10,14,4,7,12,22,1,17)
+x
+y=c(31,58,65,73,37,44,60,91,21,84)
+#mean of x and y
+xbar=mean(x)
+xbar
+ybar=mean(y)
+ybar
+#variance of x and y
+Var_x=var(x)
+Var_x
+Var_y=var(y)
+Var_y
+#covariance of x and y
+Cov_xy=cov(x,y)
+Cov_xy
+#correlation of x and y by Karl Pearson
+Corr_xy=cor(x,y, use="everything", method="pearson")
+Corr_xy
+#scatter plot of x and y
+plot(x,y,type="p",pch=16,main="scatter plot of x and y",col="blue",xlab="number of hours prepared",ylab="marks obtained")
