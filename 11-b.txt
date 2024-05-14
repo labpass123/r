@@ -1,0 +1,27 @@
+alpha=1/100 
+alpha 
+f0=c(51,40,10,9,105,103,25,17,384,527,125,104) 
+f0 
+r=3 
+r 
+s=4 
+s 
+data=matrix(f0, nrow=3,ncol=4, byrow=TRUE) 
+dimnames(data)=list(Conditions=c("Severe","Moderate","Mild"),BloodGroups=c("O","A","B","AB"))
+data=as.table(data) 
+data 
+test_result=chisq.test(data) 
+test_result 
+df=(r-1)*(s-1) 
+df 
+chisquare_cal=round(test_result$statistic,2) 
+chisquare_cal 
+chisquare_tab=round(qchisq(p=alpha/2, df=df, lower.tail=F),4) 
+chisquare_tab 
+p_value=round(test_result$p.value,4) 
+p_value 
+if(chisquare_cal<chisquare_tab) {print("Accept the null hypothesis H0")}else{print("Reject the null hypothesis HO")}
+if(p_value<alpha) {print("Reject the null hypothesis H0")}else{print("Do not reject the null hypothesis HO")}
+cat("Chi-square statistic value is:", chisquare_cal, "\n") 
+cat("Chi-square critical value is:", chisquare_tab, "\n") 
+cat("P-value is:", p_value, "\n")
