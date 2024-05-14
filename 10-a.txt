@@ -1,0 +1,43 @@
+n1=16
+n1
+n2=25
+n2
+
+s1=9
+s1
+s2=12
+s2
+
+alpha=0.01
+alpha
+
+S1=sqrt((n1*s1^2)/(n1-1))
+S1
+S2=sqrt((n2*s2^2)/(n2-1))
+S2
+
+F_cal1=S1^2/S2^2
+F_cal2=S2^2/S1^2
+
+F_cal=if(S1^2>S2^2){print(F_cal1)}else{print(F_cal2)}
+F_cal
+
+df1=c(n1-1,n2-1)
+df2=c(n2-1,n1-1)
+
+df=if(S1^2>S2^2){print(df1)}else{print(df2)}
+df
+
+F_tab=round(qf(alpha,df1=df[1],df2=df[2],lower.tail=F),2)
+
+p_value =pf(F_cal,df1=df[1],df2=df[2], lower.tail=T )
+p_value
+
+if (F_cal<F_tab) {print("Accept the null hypothesis H0")}else {print("Reject the null hypothesis H0")}
+
+if (p_value < alpha) {cat("Reject the null hypothesis H0")} else{cat("Accept the null hypothesis H0")}
+
+cat("F-statistic value is:", F_cal, "\n")
+cat("F-Critical value is:", F_tab, "\n")
+cat("P-value is:", p_value, "\n")
+
